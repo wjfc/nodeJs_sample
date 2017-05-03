@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Document</title>
+	<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+</head>
+<body>
+	<div>123</div>
+		<label for="user">用户名</label><input type="text" id="user">
+		<label for="pas">密码</label><input type="text" id="pas">
+		<label for="tel">电话号码</label><input type="number" id="tel">
+		<input type="button" id="sub" value="提交">
+	<script>
+		 
+		$('#sub').on('click', function() {
+			var username = $('#user').val();
+			var password = $('#pas').val();
+			var telephone = $('#tel').val();
+			$.ajax({
+			type: 'POST',
+			url: 'http://localhost:3000/dev/editAccountList',
+			data: {
+				user:username,
+				pas:password,
+				tel:telephone,
+			},
+			success: function() {
+				console.log('success')
+			}
+		})
+		})
+		
+	</script>
+</body>
+</html>
