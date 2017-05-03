@@ -1,4 +1,5 @@
 # A simple nodejs program
+## express + sequelize + mysql + lodash
 ## Usage
 
 ```js
